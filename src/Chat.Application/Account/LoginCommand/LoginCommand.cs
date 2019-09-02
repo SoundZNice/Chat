@@ -2,7 +2,7 @@
 
 namespace Chat.Application.Account.LoginUserCommand
 {
-    public class LoginUserCommand : IRequest<LoginUserViewModel>
+    public class LoginCommand : IRequest<LoginCommandResult>
     {
         public string UserName { get; set; }
         public string Password { get; set; }
