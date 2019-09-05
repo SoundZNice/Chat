@@ -1,4 +1,4 @@
-namespace Chat.Application.Interfaces.Auth
+namespace Chat.Application.Interfaces.Authentication
 {
     public interface ISecurityService
     {
