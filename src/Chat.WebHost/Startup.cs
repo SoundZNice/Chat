@@ -1,7 +1,13 @@
+using Chat.Application.Interfaces;
+using Chat.Persistence;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Chat.WebHost
 {
@@ -25,8 +31,6 @@ namespace Chat.WebHost
             }
             else
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -36,15 +40,15 @@ namespace Chat.WebHost
 
             app.UseMvcWithDefaultRoute();
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
+                       app.UseSpa(spa =>
+                       {
+                           spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
-                }
-            });
+                           if (env.IsDevelopment())
+                           {
+                               spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                           }
+                       });
         }
     }
 }
