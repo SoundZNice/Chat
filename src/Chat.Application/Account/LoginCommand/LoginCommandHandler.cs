@@ -32,6 +32,8 @@ namespace Chat.Application.Account.LoginUserCommand
             {
                 return new LoginCommandResult { Succeeded = false };
             }
+
+            throw new NotImplementedException(nameof(LoginCommandHandler));
         }
 
         private async Task CreateJwtTokenAsync(User user)
@@ -46,7 +48,9 @@ namespace Chat.Application.Account.LoginUserCommand
                 //new Claim(JwtRegisteredClaimNames)
             };
 
-            string key = new SymmetricSecurityKey();
+            //string key = new SymmetricSecurityKey();
+
+            throw new NotImplementedException(nameof(CreateAccessTokenAsync));
         }
 
         private async Task<User> FindUserAsync(string email, string password)

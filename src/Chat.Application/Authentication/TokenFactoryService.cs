@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -14,9 +15,10 @@ namespace Chat.Application.Authentication
             throw new System.NotImplementedException();
         }
 
-        private Task<(string accessToken, IEnumerable<Claim> claims)> GetAccessToken(User user)
+        private async Task<(string accessToken, IEnumerable<Claim> claims)> GetAccessToken(User user)
         {
-            var claims =
+            //var claims =
+            throw new NotImplementedException(nameof(GetAccessToken));
         }
     }
 }
